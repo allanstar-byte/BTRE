@@ -1,0 +1,8 @@
+{
+    "workbench.settings.editor": "json",
+    "yet-phpunit.xmlConfigFilepath": "",
+    "yet-phpunit.ssh.user": "",
+    "yet-phpunit.ssh.port": 0,
+    "workbench.settings.openDefaultSettings": false,
+    "workbench.settings.openDefaultKeybindings": false
+}

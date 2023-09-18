@@ -39,7 +39,26 @@
             commodi id libero eveniet harum perferendis laborum molestias quia.</p>
         </div>
         <div class="col-md-4">
-          <div class="card">
+          {% if mvp_realtors %}
+            {% for realtor in mvp_realtors %}
+            <div class="card">
+            <img class="card-img-top" src="{{ realtor.photo.url}}" alt="Seller of the month">
+            <div class="card-body">
+              <h5 class="card-title">Seller Of The Month</h5>
+              <h6 class="text-secondary">{{ realtor.name}}</h6>
+              <p class="card-text">
+                {{ realtor.description }}
+              </p>
+            </div>
+          </div>
+            {% endfor %}
+
+          {% else %}
+          <div class="col-md-12">
+            <p>No Realtors Available</p>
+          </div>
+        {% endif %}
+          <!-- <div class="card">
             <img class="card-img-top" src="assets/img/realtors/kyle.jpg" alt="Seller of the month">
             <div class="card-body">
               <h5 class="card-title">Seller Of The Month</h5>
@@ -48,7 +67,7 @@
                 content.
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -67,7 +86,29 @@
     <div class="container">
       <h2 class="text-center">Our Team</h2>
       <div class="row text-center">
-        <div class="col-md-4">
+
+        {% if realtors %}
+          {% for realtor in realtors %}
+          <div class="col-md-4">
+            <img src="{{ realtor.photo.url }}" alt="" class="rounded-circle mb-3">
+            <h4>{{ realtor.name }}</h4>
+            <p class="text-success">
+              <i class="fas fa-award text-success mb-3"></i> Realtor</p>
+            <hr>
+            <p>
+              <i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+            <p>
+              <i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
+          </div>
+
+          {% endfor %}
+
+        {% else %}
+          <div class="col-md-12">
+            <p>No Realtors Available</p>
+          </div>
+        {% endif %}
+        <!-- <div class="col-md-4">
           <img src="assets/img/realtors/kyle.jpg" alt="" class="rounded-circle mb-3">
           <h4>Kyle Brown</h4>
           <p class="text-success">
@@ -99,7 +140,7 @@
             <i class="fas fa-phone"></i> (333)-333-3333</p>
           <p>
             <i class="fas fa-envelope-open"></i> jenny@btrealestate.co</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
